@@ -6,30 +6,65 @@ var gulp       = require('gulp'),
     stylus     = require('gulp-stylus'),
     browserify = require('gulp-browserify'),
     rename     = require('gulp-rename'),
-    livereload = require('gulp-livereload');
+    path       = require("path");
+
+if (process.env.ENVIRONMENT != "PRODUCTION") {
+  livereload = require('gulp-livereload');
+}
+
+var baseAppPath = path.join(__dirname, 'app'),
+    baseStaticPath = path.join(__dirname, '.generated'),
+    baseJsPath = path.join(baseAppPath, 'js'),
+    baseCssPath = path.join(baseAppPath, 'css');
 
 var paths = {
-  cssPath: ['./app/css/**/*.styl*'],
-  cssInput: './app/css/main.styl',
-  cssOutput: './.generated/css',
-  coffeePath: ['./app/js/**/*.coffee'],
-  coffeeInput: './app/js/main.coffee',
-  coffeeOutput: './.generated/js',
-  assetsBasePath: './app',
+  cssPath: [path.join(baseCssPath, '**', '*.styl*')],
+  cssInput: path.join(baseCssPath, 'main.styl'),
+  cssOutput: path.join(baseStaticPath, 'css'),
+  coffeePath: [path.join(baseJsPath, '**', '*.coffee')],
+  coffeeInput: path.join(baseJsPath, 'main.coffee'),
+  coffeeOutput: path.join(baseStaticPath, 'js'),
+  assetsBasePath: baseAppPath,
   assetsPaths: [
-    './app/img/**/*',
-    './app/fonts/**/*',
-    './app/**/*.html'
+    path.join(baseAppPath, 'img', '**', '*'),
+    path.join(baseAppPath, 'fonts', '**', '*'),
+    path.join(baseAppPath, '**', '*.html')
   ],
-  assetsOutput: './.generated/'
+  assetsOutput: baseStaticPath
 };
+
+var testFiles = [
+  '.generated/js/app.js',
+  'test/client/*.js'
+];
+
+
+gulp.task('test', function() {
+  // Be sure to return the stream
+  return gulp.src(testFiles)
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+      // Make sure failed tests cause gulp to exit non-zero
+      throw err;
+    });
+});
+
+
+gulp.task('default', function () {
+  console.log("default task does nothing, hombre.")
+});
 
 
 //
 // Stylus
 //
 
-gulp.task('stylus', function() {
+
+// Get and render all .styl files recursively
+gulp.task('stylus', function () {
   gulp.src(paths.cssInput)
     .pipe(stylus()
       .on('error', gutil.log)
@@ -45,6 +80,7 @@ gulp.task('stylus', function() {
 gulp.task('coffee', function() {
   gulp.src(paths.coffeeInput, { read: false })
     .pipe(browserify({
+      basedir: __dirname,
       transform: ['coffeeify'],
       extensions: ['.coffee']
     })
@@ -53,7 +89,7 @@ gulp.task('coffee', function() {
     .pipe(rename('main.js'))
     .pipe(gulp.dest(paths.coffeeOutput))
 
-  gulp.src('./app/js/app.coffee', { read: false })
+  gulp.src(path.join(__dirname, 'app', 'js', 'app.coffee'), { read: false })
     .pipe(browserify({
       transform: ['coffeeify'],
       extensions: ['.coffee']
@@ -80,7 +116,7 @@ gulp.task('assets', function() {
 //
 
 gulp.task('clean', function() {
-  gulp.src('./.generated/**/*', {read: false})
+  gulp.src(path.join(baseStaticPath, '**', '*'), {read: false})
     .pipe(clean());
 });
 
@@ -88,15 +124,16 @@ gulp.task('clean', function() {
 //
 // Watch
 //
-
 gulp.task('watch', ['clean','stylus','coffee','assets'], function() {
-  var server = livereload();
   gulp.watch(paths.cssPath, ['stylus']);
   gulp.watch(paths.coffeePath, ['coffee']);
   gulp.watch(paths.assetsPaths, ['assets']);
-  gulp.watch('.generated/**').on('change', function(file) {
-    server.changed(file.path);
-  });
+  if (livereload) {
+    var server = livereload();
+    gulp.watch(path.join(baseStaticPath, '**')).on('change', function(file) {
+      server.changed(file.path);
+    });
+  }
 });
 
 gulp.task('default', ['stylus', 'coffee', 'assets']);
