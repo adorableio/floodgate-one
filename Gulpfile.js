@@ -4,6 +4,7 @@ var gulp       = require('gulp'),
     gutil      = require('gulp-util'),
     clean      = require('gulp-clean'),
     stylus     = require('gulp-stylus'),
+    nib        = require('nib'),
     browserify = require('gulp-browserify'),
     rename     = require('gulp-rename'),
     livereload = require('gulp-livereload');
@@ -25,16 +26,11 @@ var paths = {
 };
 
 
-gulp.task('default', function () {
-  console.log("default task does nothing, hombre.")
-});
-
-
 //
 // Stylus
 //
 
-gulp.task('stylus', function () {
+gulp.task('stylus', function() {
   gulp.src(paths.cssInput)
     .pipe(stylus()
       .on('error', gutil.log)
