@@ -4,7 +4,6 @@ var gulp       = require('gulp'),
     gutil      = require('gulp-util'),
     clean      = require('gulp-clean'),
     stylus     = require('gulp-stylus'),
-    nib        = require('nib'),
     browserify = require('gulp-browserify'),
     rename     = require('gulp-rename'),
     livereload = require('gulp-livereload');
