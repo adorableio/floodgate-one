@@ -48,15 +48,16 @@ build-grid();
 
 .column,
 .columns {
-  box-shadow: 0 0 1px blue;
   float: left;
   position: relative;
+  img { width: 100%; }
 }
 
 .row {
   list-style: none;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: (column-gutter / 2);
   width: 100%;
   max-width: row-width;
   clearfix();
