@@ -18,7 +18,10 @@ var baseAppPath = path.join(__dirname, 'app'),
     baseCssPath = path.join(baseAppPath, 'css');
 
 var paths = {
-  cssPath: [path.join(baseCssPath, '**', '*', '*.styl*')],
+  cssPath: [
+    path.join(baseCssPath, '**', '*.styl*'),
+    baseCssPath, path.join('**', '*', '*.styl*')
+  ],
   cssInput: path.join(baseCssPath, 'main.styl'),
   cssOutput: path.join(baseStaticPath, 'css'),
   coffeePath: [path.join(baseJsPath, '**', '*.coffee')],
