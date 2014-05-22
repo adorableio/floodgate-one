@@ -31,6 +31,10 @@ build-grid(class = 'small', columns = 12) {
   }
 }
 
+grid-column(columns = 1) {
+  percent-width = 1% * ((i / columns) * 100);
+  width: percent-width;
+}
 
 build-grid();
 
@@ -65,10 +69,4 @@ build-grid();
   width: 100%;
   max-width: row-width;
   clearfix();
-}
-
-
-html, body {
-  margin: 0;
-  padding: 0;
 }

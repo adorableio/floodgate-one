@@ -3,23 +3,20 @@
 <head>
   <title>Firepit</title>
   <link rel="stylesheet" href="/assets/css/main.css">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
-
-  <header>
-    <div class="row">
-      <div class="small-12 column">
-        <h1>
-          <span>Floodgate</span>
-          <img src="/assets/img/main-logo@2x.png">
-        </h1>
-
+  <div id="skrollr-body">
+    <header>
+      <div class="row">
+        <div class="small-12 column">
+          <h1>
+            <span>Floodgate</span>
+            <img src="/assets/img/main-logo@2x.png">
+          </h1>
+        </div>
       </div>
-    </div>
-  </header>
 
-  <main>
-    <section>
       <div class="row">
         <div class="small-12 medium-4 column">
           <img src="/assets/img/scuba-dude.png">
@@ -29,95 +26,101 @@
           All the awesome floodgate does. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, id, cum unde maxime ad perferendis repellat doloribus quasi reiciendis nemo. Deserunt, labore vitae rem vero eligendi accusantium minima consequatur consectetur.
         </div>
       </div>
-    </section>
+    </header>
 
-    <section>
+    <main>
+      <div class="left-gate" data-0="width:0%;" data-400-top-top="width:50%;"></div>
+      <div class="right-gate" data-0="width:0%;" data-400-top-top="width:50%;"></div>
+
+      <section class="fader" data-0="opacity: 0;" data-400-top-top="opacity: 0;" data-220-top-top="opacity: 1;" >
+        <div class="row">
+
+          <div class="small-12 medium-12 column">
+            <h2>Getting started</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
+
+            <h3>Installation in a snap</h3>
+            <pre><code>
+  heroku addon floodgate
+            </code></pre>
+
+            <h3>Open the Floodgates!</h3>
+            <pre><code>
+  heroku floodgate open
+            </code></pre>
+
+            <h3>Close the Floodgates!</h3>
+            <pre><code>
+  heroku floodgate close
+            </code></pre>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="row">
+          <div class="small-12 medium-8 column">
+            <h2>More better!</h2>
+            <p>Heroku maintenance? PSH! Floodgate is moar awesome! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, id, cum unde maxime ad perferendis repellat doloribus quasi reiciendis nemo. <i>*MIC DROP*</i></p>
+          </div>
+          <div class="small-12 medium-4 column">
+            <img src="http://adorable-avatars.herokuapp.com/avatar/img2.png">
+          </div>
+        </div>
+      </section>
+
+      <section>
+
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <h2>Features and stuff</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-3 column">
+            <img src="http://adorable-avatars.herokuapp.com/avatar/img3.png">
+            <h3>Cool thing.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="small-12 medium-3 column">
+            <img src="http://adorable-avatars.herokuapp.com/avatar/img4.png">
+            <h3>Other cool thing.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="small-12 medium-3 column">
+            <img src="http://adorable-avatars.herokuapp.com/avatar/img5.png">
+            <h3>Really cool thing.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="small-12 medium-3 column">
+            <img src="http://adorable-avatars.herokuapp.com/avatar/img6.png">
+            <h3>Time to change your underwear awesome.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <footer>
+
       <div class="row">
-
-        <div class="small-12 medium-12 column">
-          <h2>Getting started</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
-
-          <h3>Installation in a snap</h3>
-          <pre><code>
-heroku addon floodgate
-          </code></pre>
-
-          <h3>Open the Floodgates!</h3>
-          <pre><code>
-heroku floodgate open
-          </code></pre>
-
-          <h3>Close the Floodgates!</h3>
-          <pre><code>
-heroku floodgate close
-          </code></pre>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="small-12 medium-8 column">
-          <h2>More better!</h2>
-          <p>Heroku maintenance? PSH! Floodgate is moar awesome! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, id, cum unde maxime ad perferendis repellat doloribus quasi reiciendis nemo. <i>*MIC DROP*</i></p>
-        </div>
-        <div class="small-12 medium-4 column">
-          <img src="http://adorable-avatars.herokuapp.com/avatar/img2.png">
+        <div class="small-6 medium-3 small-center column">
+          <p>footer</p>
         </div>
       </div>
-    </section>
 
-    <section>
-
-      <div class="row">
-        <div class="small-2 medium-3 column">
-          <h2>Features and stuff</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-2 medium-3 column">
-          <img src="http://adorable-avatars.herokuapp.com/avatar/img3.png">
-          <h3>Cool thing.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="small-2 medium-3 column">
-          <img src="http://adorable-avatars.herokuapp.com/avatar/img4.png">
-          <h3>Other cool thing.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="small-2 medium-3 column">
-          <img src="http://adorable-avatars.herokuapp.com/avatar/img5.png">
-          <h3>Really cool thing.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="small-2 medium-3 column">
-          <img src="http://adorable-avatars.herokuapp.com/avatar/img6.png">
-          <h3>Time to change your underwear awesome.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-
-  <footer>
-
-    <div class="row">
-      <div class="small-12 column">
-        <p>footer</p>
-      </div>
-    </div>
-
-  </footer>
+    </footer>
+  </div>
 
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/handlebars/handlebars.js"></script>
-  <script src="/vendor/ember/ember.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/vendor/skrollr/dist/skrollr.min.js"></script>
+  <script type="text/javascript">
+  var s = skrollr.init();
+  </script>
 </body>
 </html>

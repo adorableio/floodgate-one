@@ -1,11 +1,22 @@
 
+@viewport {
+  width: extend-to-zoom 980px;
+  min-zoom: 0.25;
+  max-zoom: 5;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 section {
   border-bottom: 1px solid rgba(black, .24);
-  margin: column-gutter;
+  margin-bottom: column-gutter;
 }
 
 body {
@@ -21,5 +32,39 @@ header {
     img {
       max-width: 960px;
     }
+  }
+}
+
+main {
+  position: relative;
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  section.fader {
+    opacity: 0;
+    padding-top: 60px;
+  }
+
+  .left-gate {
+    background: #fff;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  .right-gate {
+    background: #fff;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
   }
 }
