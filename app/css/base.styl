@@ -15,7 +15,6 @@ html, body {
 }
 
 section {
-  border-bottom: 1px solid rgba(black, .24);
   margin-bottom: column-gutter;
 }
 
@@ -25,13 +24,20 @@ body {
 
 header {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 0;
   h1 {
     text-align: center;
     span { display: none; }
     img {
       max-width: 960px;
     }
+  }
+  h2 {
+    color: yellow;
+  }
+
+  .row {
+    margin-bottom: 60px;
   }
 }
 
@@ -42,29 +48,36 @@ main {
     z-index: 2;
   }
 
-  section.fader {
-    opacity: 0;
+
+  section {
     padding-top: 60px;
+    padding-bottom: 60px;
+
+    &.fader {
+      opacity: 0;
+      padding-top: 60px;
+    }
+    &.light {
+      background-color: white;
+      h2 { color: black; }
+      p { color: black; }
+    }
   }
 
-  .left-gate {
-    background: #fff;
+  .gate {
+    background-color: desaturate(lighten(light-blue, 30%), 60%);
     content: '';
-    width: 0;
     height: 100%;
     top: 0;
-    left: 0;
+    width: column-gutter;
     position: absolute;
     z-index: 1;
+
+    box-shadow: 0 -20px 0 white;
+
+    &.left { left: 0; }
+    &.right { right: 0; }
+
   }
-  .right-gate {
-    background: #fff;
-    content: '';
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
-    z-index: 1;
-  }
+
 }
