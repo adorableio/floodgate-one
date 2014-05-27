@@ -33,35 +33,52 @@
     </header>
 
     <main>
-      <div class="left gate" data-0="width: 15%" data-100-top-top="width:15%;" data-10-top-top="width: 50%;"></div>
-      <div class="right gate" data-0="width: 15%;" data-100-top-top="width:15%;" data-10-top-top="width: 50%;"></div>
+      <div class="left gate animate-480"></div>
+      <div class="right gate animate-480"></div>
       <div class="waterfall"><% include img/waterfall.svg %></div>
-      <section class="fader" data-0="opacity: 0; transform: scale(1.1)" data-30-top-top="opacity: 0;;" data-10-top-top="opacity: 1; transform: scale(1)" >
+      <section class="fader animate-480">
         <div class="row">
 
-          <div class="small-12 medium-12 column">
+          <div class="small-12 medium-12 column text-center">
             <h2>Getting started</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
+        </div>
+
+
+        <div class="row">
+          <div class="small-12 column">
 
             <h3>Installation in a snap</h3>
             <pre><code>
   heroku addon floodgate
             </code></pre>
+          </div>
+        </div>
 
+
+        <div class="row">
+          <div class="small-12 medium-6 column">
             <h3>Open the Floodgates!</h3>
             <pre><code>
   heroku floodgate open
             </code></pre>
+          </div>
 
+          <div class="small-12 medium-6 column">
             <h3>Close the Floodgates!</h3>
             <pre><code>
   heroku floodgate close
             </code></pre>
+        </div>
+
+        <div class="row">
+          <div class="small-12 column">
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sint, tenetur, pariatur id non aliquid laborum voluptate facilis odit quo obcaecati iusto corporis modi eaque sapiente ipsum mollitia vel exercitationem.</p>
           </div>
-
         </div>
+
+
       </section>
 
       <section class="light">
@@ -122,9 +139,11 @@
   </div>
 
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/skrollr/dist/skrollr.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="//use.typekit.net/tql0qbj.js"></script>
+
   <script type="text/javascript">
-  var s = skrollr.init();
+    try{Typekit.load();}catch(e){}
   </script>
 </body>
 </html>

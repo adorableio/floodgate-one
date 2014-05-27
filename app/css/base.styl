@@ -16,6 +16,7 @@ html, body {
 }
 
 section {
+  padding-top: 60px;
   margin-bottom: column-gutter;
 }
 
@@ -46,6 +47,8 @@ header {
   .scuba-dude {
     max-height: 320px;
     tranform-origin: 50% 400px;
+    z-index: 3;
+    position: relative;
     // animation: scuba-drift 4s ease alternate infinite;
 
     svg {
@@ -59,6 +62,33 @@ header {
       #HANDS {
         > * { fill: yellow; }
       }
+
+      #waves-front {
+        animation: scuba-drift 3s ease alternate infinite;
+        width: 80%;
+        left: 50%;
+        margin-left: -30%;
+        max-height: 28px;
+        position: absolute;
+        z-index: 10;
+        top: 100%;
+        path {
+          animation: scuba-bob-small 2s 1s ease alternate infinite;
+        }
+      }
+
+      #waves-back {
+        animation: scuba-drift 2s .3s ease alternate infinite;
+        width: 100%;
+        max-height: 28px;
+        position: absolute;
+        z-index: 1;
+        bottom: 120px;
+        path {
+          animation: scuba-bob 3s .7s ease alternate infinite;
+        }
+      }
+
     }
   }
 }
@@ -72,12 +102,18 @@ main {
 
 
   section {
-    padding-top: 0px;
-    padding-bottom: 60px;
 
     &.fader {
+      transition: opacity .4s ease-in;
       opacity: 0;
+      padding-bottom: 60px;
       padding-top: 60px;
+
+      &.activated {
+
+        transition: opacity .4s ease-in .4s;
+        opacity: 1;
+      }
     }
     &.light {
       background-color: white;
@@ -88,17 +124,23 @@ main {
 
 
   .gate {
+    transition: width .4s ease-in .4s;
     background-color: off-white;
     box-shadow: 0 -20px 0 white;
     content: '';
     top: 0;
-    width: column-gutter;
+    width: 15%;
     height: 100%;
     position: absolute;
     z-index: 2;
 
     &.left { left: 0; }
     &.right { right: 0; }
+
+    &.activated {
+      transition: width .4s ease-in;
+      width: 50%;
+    }
 
   }
 
