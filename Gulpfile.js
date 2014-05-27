@@ -6,6 +6,7 @@ var gulp       = require('gulp'),
     stylus     = require('gulp-stylus'),
     browserify = require('gulp-browserify'),
     rename     = require('gulp-rename'),
+    ejs        = require("gulp-ejs"),
     path       = require("path");
 
 if (process.env.ENVIRONMENT != "PRODUCTION") {
@@ -27,6 +28,10 @@ var paths = {
   coffeePath: [path.join(baseJsPath, '**', '*.coffee')],
   coffeeInput: path.join(baseJsPath, 'main.coffee'),
   coffeeOutput: path.join(baseStaticPath, 'js'),
+  ejsPath:  [
+    path.join(baseAppPath, '**', '*.ejs'),
+    path.join(baseAppPath, '**', '*.svg'),
+  ],
   assetsBasePath: baseAppPath,
   assetsPaths: [
     path.join(baseAppPath, 'img', '**', '*'),
@@ -103,6 +108,18 @@ gulp.task('coffee', function() {
 
 
 //
+// EJS
+//
+
+gulp.task('ejs', function() {
+  gulp.src(paths.ejsPath)
+    .pipe(ejs()
+      .on('error', gutil.log)
+      .on('error', gutil.beep))
+    .pipe(gulp.dest(paths.assetsOutput));
+});
+
+//
 // Static Assets
 //
 
@@ -127,10 +144,11 @@ gulp.task('clean', function() {
 //
 // Watch
 //
-gulp.task('watch', ['clean','stylus','coffee','assets'], function() {
+gulp.task('watch', ['clean','stylus','coffee','assets','ejs'], function() {
   gulp.watch(paths.cssPath, ['stylus']);
   gulp.watch(paths.coffeePath, ['coffee']);
   gulp.watch(paths.assetsPaths, ['assets']);
+  gulp.watch(paths.ejsPath, ['ejs']);
   if (livereload) {
     var server = livereload();
     gulp.watch(path.join(baseStaticPath, '**')).on('change', function(file) {

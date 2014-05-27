@@ -1,4 +1,5 @@
 
+
 @viewport {
   width: extend-to-zoom 980px;
   min-zoom: 0.25;
@@ -19,12 +20,14 @@ section {
 }
 
 body {
-  background-color: blue;
+  background-color: dark-blue;
 }
 
 header {
+  background-color: blue;
   padding-top: 60px;
-  padding-bottom: 0;
+  padding-bottom: 60px;
+  position: relative;
   h1 {
     text-align: center;
     span { display: none; }
@@ -39,18 +42,61 @@ header {
   .row {
     margin-bottom: 60px;
   }
+
+  .scuba-dude {
+    max-height: 320px;
+    tranform-origin: 50% 400px;
+    // animation: scuba-drift 4s ease alternate infinite;
+
+    svg {
+      animation: scuba-rock 8s linear alternate infinite;
+      #dude {
+        tranform-origin: 50% 400px;
+        animation: scuba-bob 2s ease alternate infinite;
+      }
+
+      #SUIT,
+      #HANDS {
+        > * { fill: yellow; }
+      }
+    }
+  }
+
+  .rock {
+    display: inline-block;
+    // border: 1px solid #f00;
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+    height: 100px;
+    top: -100px;
+    right: 0;
+    svg {
+      position: relative;
+      .ripple {
+        opacity: 0;
+        &.one {
+          display: none;
+        }
+        &.two {
+          transform-origin: 230px 210px;
+          animation: ripple 2s linear infinite;
+        }
+      }
+    }
+  }
 }
 
 main {
   position: relative;
   > * {
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
 
 
   section {
-    padding-top: 60px;
+    padding-top: 0px;
     padding-bottom: 60px;
 
     &.fader {
@@ -64,20 +110,46 @@ main {
     }
   }
 
+
   .gate {
-    background-color: desaturate(lighten(light-blue, 30%), 60%);
+    background-color: off-white;
+    box-shadow: 0 -20px 0 white;
     content: '';
-    height: 100%;
     top: 0;
     width: column-gutter;
+    height: 100%;
     position: absolute;
-    z-index: 1;
-
-    box-shadow: 0 -20px 0 white;
+    z-index: 2;
 
     &.left { left: 0; }
     &.right { right: 0; }
 
   }
 
+}
+
+
+
+.waterfall {
+  width: 1000px;
+  height: 1688px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -500px;
+  z-index: 1;
+  svg {
+    line {
+      stroke: light-blue;
+      stroke-width: 8;
+    }
+    #col1 { animation: waterfall 2s linear infinite; }
+    #col2 { animation: waterfall 3s linear infinite; }
+    #col3 { animation: waterfall 2s linear infinite; }
+    #col4 { animation: waterfall 3s linear infinite; }
+    #col5 { animation: waterfall 2s linear infinite; }
+    #col6 { animation: waterfall 3s linear infinite; }
+    #col7 { animation: waterfall 4s linear infinite; }
+    #col8 { animation: waterfall 2s linear infinite; }
+  }
 }

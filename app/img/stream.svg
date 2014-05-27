@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="162.037 -800 54 1200" enable-background="new 162.037 -800 54 1200" xml:space="preserve" preserveAspectRatio="xMidYMin slice">
+  <defs>
+    <filter id="adobeStreamMaskFilter" filterUnits="userSpaceOnUse" x="200.139" y="-1158" width="7.795" height="1070.451">
+    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+  </defs>
+  <mask maskUnits="userSpaceOnUse" x="200.139" y="-1158" width="7.795" height="1070.451" id="streamMask">
+  <g filter="url(#adobeStreamMaskFilter)">
+    <rect x="162.037" y="-755.791" fill="#FFFFFF" width="54" height="1158"/>
+  </g>
+</mask>
+  <g mask="url(#streamMask)">
+    <path id="stream-path" fill="none" stroke="#FFFFFF" stroke-width="3.7947" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M206.037-1155.599c0,22.222-4,22.222-4,44.443s4,22.221,4,44.442c0,22.22-4,22.22-4,44.438c0,22.221,4,22.221,4,44.443 s-4,22.222-4,44.443c0,22.222,4,22.222,4,44.446c0,22.222-4,22.222-4,44.444c0,22.224,4,22.224,4,44.45c0,22.222-4,22.222-4,44.443 c0,22.221,4,22.221,4,44.442c0,22.219-4,22.219-4,44.438c0,22.221,4,22.221,4,44.443s-4,22.222-4,44.443 c0,22.223,4,22.223,4,44.446s-4,22.222-4,44.444c0,22.226,4,22.226,4,44.45c0,22.226-4,22.226-4,44.45c0,22.221,4,22.221,4,44.442 c0,22.219-4,22.219-4,44.438c0,22.221,4,22.221,4,44.443s-4,22.222-4,44.443c0,22.222,4,22.223,4,44.446s-4,22.222-4,44.444 c0,22.226,4,22.226,4,44.45"/>
+  </g>
+  <path id="stream-curve" fill="none" stroke="#FFFFFF" stroke-width="3.9633" stroke-linejoin="round" stroke-miterlimit="10" d="M162.037-795.606c22.091,0,40,17.909,40,40"/>
+</svg>

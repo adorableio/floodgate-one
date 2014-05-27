@@ -7,6 +7,7 @@
 </head>
 <body>
   <div id="skrollr-body">
+
     <header>
       <div class="row">
         <div class="small-12 column">
@@ -19,19 +20,22 @@
 
       <div class="row">
         <div class="small-12 medium-4 column">
-          <img src="/assets/img/scuba-dude.png">
+          <div class="scuba-dude">
+            <% include img/scuba-dude.svg %>
+          </div>
         </div>
         <div class="small-12 medium-8 column">
           <h2>Seriously simple access control!</h2>
           All the awesome floodgate does. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, id, cum unde maxime ad perferendis repellat doloribus quasi reiciendis nemo. Deserunt, labore vitae rem vero eligendi accusantium minima consequatur consectetur.
         </div>
       </div>
+
     </header>
 
     <main>
-      <div class="left gate" data-0="width: 3%" data-200-top-top="width:50%;"></div>
-      <div class="right gate" data-0="width: 30px;" data-1="width: 3%" data-200-top-top="width:50%;"></div>
-
+      <div class="left gate" data-0="width: 25%" data-200-top-top="width:50%;"></div>
+      <div class="right gate" data-0="width: 25%;" data-200-top-top="width:50%;"></div>
+      <div class="waterfall"><% include img/waterfall.svg %></div>
       <section class="fader" data-0="opacity: 0;" data-240-top-top="opacity: 0;" data-140-top-top="opacity: 1;" >
         <div class="row">
 
