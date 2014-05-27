@@ -49,6 +49,7 @@ header {
     tranform-origin: 50% 400px;
     z-index: 3;
     position: relative;
+    top: -40px;
     // animation: scuba-drift 4s ease alternate infinite;
 
     svg {
@@ -64,6 +65,7 @@ header {
       }
 
       #waves-front {
+        transform: translate(-15px, 0);
         animation: scuba-drift 3s ease alternate infinite;
         width: 80%;
         left: 50%;
@@ -73,11 +75,13 @@ header {
         z-index: 10;
         top: 100%;
         path {
+          transform: translate(0, -5px);
           animation: scuba-bob-small 2s 1s ease alternate infinite;
         }
       }
 
       #waves-back {
+        transform: translate(-5px, 0);
         animation: scuba-drift 2s .3s ease alternate infinite;
         width: 100%;
         max-height: 28px;
@@ -85,6 +89,7 @@ header {
         z-index: 1;
         bottom: 120px;
         path {
+          transform: translate(0, -10px);
           animation: scuba-bob 3s .7s ease alternate infinite;
         }
       }
