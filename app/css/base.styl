@@ -61,30 +61,6 @@ header {
       }
     }
   }
-
-  .rock {
-    display: inline-block;
-    // border: 1px solid #f00;
-    position: absolute;
-    z-index: 1;
-    width: 280px;
-    height: 100px;
-    top: -100px;
-    right: 0;
-    svg {
-      position: relative;
-      .ripple {
-        opacity: 0;
-        &.one {
-          display: none;
-        }
-        &.two {
-          transform-origin: 230px 210px;
-          animation: ripple 2s linear infinite;
-        }
-      }
-    }
-  }
 }
 
 main {
@@ -140,7 +116,7 @@ main {
   z-index: 1;
   svg {
     line {
-      stroke: light-blue;
+      stroke: blue;
       stroke-width: 8;
     }
     #col1 { animation: waterfall 2s linear infinite; }
