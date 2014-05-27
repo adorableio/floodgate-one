@@ -157,4 +157,4 @@ gulp.task('watch', ['clean','stylus','coffee','assets','ejs'], function() {
   }
 });
 
-gulp.task('default', ['stylus', 'coffee', 'assets']);
+gulp.task('default', ['stylus', 'coffee', 'assets', 'ejs']);
