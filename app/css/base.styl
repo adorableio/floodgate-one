@@ -25,8 +25,15 @@ header {
   padding-top: 60px;
   padding-bottom: 60px;
   position: relative;
+  &.show {
+    .scuba-dude {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
   h1 {
     text-align: center;
+
     span { display: none; }
     img {
       max-width: 960px;
@@ -43,12 +50,14 @@ header {
   }
 
   .scuba-dude {
+    transition: all 1s ease;
     max-height: 320px;
     tranform-origin: 50% 400px;
     z-index: 3;
     position: relative;
     top: -40px;
-    // animation: scuba-drift 4s ease alternate infinite;
+    transform: translateX(-20px) scale(.9);
+    opacity: 0;
 
     svg {
       animation: scuba-rock 8s linear alternate infinite;

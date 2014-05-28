@@ -1,7 +1,12 @@
 class Main
   constructor: ->
     console.log "Main::constructor"
-    @setupEvents()
+    $ =>
+      @showHeader()
+      @setupEvents()
+
+  showHeader: ->
+    $('header').addClass('show')
 
   setupEvents: ->
     $(window).on "scroll", (event) ->
