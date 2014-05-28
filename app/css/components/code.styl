@@ -9,6 +9,23 @@ pre {
     font-family: code-font;
     font-size: code-font-size;
     font-weight: code-font-weight;
+
+    span {
+      &.comment {
+        color: code-comment-color;
+      }
+
+      &.bash {
+        &:before {
+          content: '$';
+          color: code-comment-color;
+          display: inline-block;
+          margin-right: 6px;
+          user-select: none;
+        }
+      }
+
+    }
   }
 }
 
