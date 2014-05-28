@@ -16,12 +16,6 @@ html, body {
   box-sizing: border-box;
 }
 
-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-bottom: column-gutter;
-}
-
 body {
   background-color: blue;
 }
@@ -102,6 +96,31 @@ header {
   }
 }
 
+section {
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &.fader {
+    transition: opacity .4s ease-in;
+    opacity: 0;
+    padding-bottom: 60px;
+    padding-top: 60px;
+
+    &.activated {
+      transition: opacity .2s ease-in .3s;
+      opacity: 1;
+    }
+  }
+  &.white {
+    background-color: white;
+    h2 { color: black; }
+    p { color: black; }
+  }
+
+  &.off-white { background-color: off-white; }
+}
+
 main {
 
   background: #60b6c0;
@@ -114,28 +133,6 @@ main {
   > * {
     position: relative;
     z-index: 3;
-  }
-
-
-  section {
-
-    &.fader {
-      transition: opacity .4s ease-in;
-      opacity: 0;
-      padding-bottom: 60px;
-      padding-top: 60px;
-
-      &.activated {
-
-        transition: opacity .2s ease-in .3s;
-        opacity: 1;
-      }
-    }
-    &.light {
-      background-color: white;
-      h2 { color: black; }
-      p { color: black; }
-    }
   }
 
 
@@ -165,6 +162,7 @@ main {
 footer {
   position: relative;
   font-size: 12px;
+  padding-top: 26px;
   li, p { color: white; }
   a {
     color: white;
