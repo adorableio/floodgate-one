@@ -8,7 +8,7 @@ class Main
       scrollTop = $(document).scrollTop()
       if (scrollTop >= 480)
         $('.animate-480').addClass('activated')
-      if (scrollTop <= 480)
+      if (scrollTop <= 200)
         $('.animate-480').removeClass('activated')
 
 
