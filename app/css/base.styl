@@ -153,7 +153,31 @@ main {
 
 }
 
+footer {
+  position: relative;
+  font-size: 12px;
+  li, p { color: white; }
+  a {
+    color: white;
+    text-decoration: none;
 
+    &:hover {
+      color: yellow;
+    }
+  }
+
+  .adorable-logo {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 120px;
+    max-height: 45px;
+    span { display: none; }
+    svg {
+      #letters { fill: yellow; }
+    }
+  }
+}
 
 .waterfall {
   width: 1000px;
