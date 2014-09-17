@@ -5,6 +5,8 @@ h1, h2, h3, h4, h5 {
   font-family: header-font;
   font-weight: header-weight;
   text-transform: header-transform;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 h2 {
@@ -22,4 +24,24 @@ body, p {
   font-weight: base-font-weight;
   line-height: base-line-height;
   text-shadow: base-text-shadow;
+}
+
+p {
+  padding-bottom: 1em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+blockquote {
+  box-shadow: inset 2px 0 light-purple;
+  font-family: code-font;
+  background: rgba(light-purple, .1);
+  display: block;
+  position: relative;
+  font-style: italic;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2px 0;
 }

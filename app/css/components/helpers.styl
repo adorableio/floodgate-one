@@ -17,9 +17,15 @@ animation() {
   animation:         arguments;
 }
 
+
+transition() {
+  -webkit-transition: arguments;
+  -moz-transition: arguments;
+  transition: arguments;
+}
+
 transform(value) {
   -moz-transform: arguments;
-  -o-transform: arguments;
   -webkit-transform: arguments;
   transform: arguments;
 }
@@ -37,4 +43,14 @@ user-select() {
   -ms-user-select: arguments;
   -o-user-select: arguments;
   user-select: arguments;
+}
+
+selection() {
+  ::selection {
+    {block}
+  }
+
+  ::-moz-selection {
+    {block}
+  }
 }
